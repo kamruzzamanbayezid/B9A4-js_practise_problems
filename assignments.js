@@ -1,5 +1,4 @@
 
-// Problem-01 : Help The Zoo Manager
 
 function calculateMoney(ticketSale) {
 
@@ -25,9 +24,7 @@ function calculateMoney(ticketSale) {
 
 }
 
-// console.log('Remaining Balance:', calculateMoney(1055));
 
-// Problem-02: Good Name , Bad Name
 function checkName(name) {
 
       // validation
@@ -50,10 +47,7 @@ function checkName(name) {
       }
 }
 
-// console.log('It is a:', checkName(["Rashed"]));
 
-
-// Problem 03 : Virus in my Array
 function deleteInvalids(array) {
 
       // validation
@@ -73,10 +67,7 @@ function deleteInvalids(array) {
       }
 }
 
-// console.log(deleteInvalids({num: [ 1 , 2 , 3 ]}));
 
-
-// Problem 04 : Make A Great Password
 function password(obj) {
 
       // validation
@@ -95,10 +86,8 @@ function password(obj) {
             return password;
       }
 }
-// console.log(password({ name: "toky",  siteName: "Facebook" }));
 
 
-// Problem 05 : Monthly Savings of a Freelancer
 function monthlySavings(arr, livingCost) {
 
       // validation
@@ -110,7 +99,7 @@ function monthlySavings(arr, livingCost) {
       }
       else {
 
-            let tax = 0;
+            let total_tax = 0;
             let total_income = 0;
 
             for (let payment of arr) {
@@ -121,12 +110,13 @@ function monthlySavings(arr, livingCost) {
                   }
                   else {
                         if (payment >= 3000) {
-                              tax = ((20 * payment) / 100);
+                              const tax = ((20 * payment) / 100);
+                              total_tax = total_tax + tax;
                         }
                         total_income += payment;
                   }
             }
-            const income_after_tax = total_income - tax;
+            const income_after_tax = total_income - total_tax;
             const savings = income_after_tax - livingCost;
 
             if (savings < 0) {
@@ -139,4 +129,5 @@ function monthlySavings(arr, livingCost) {
       }
 }
 
-console.log('Savings:', monthlySavings(100, [ 900 , 2700 , 3400]));
+console.log(monthlySavings([1000, 2000, 3000, 3000], 5400));
+
